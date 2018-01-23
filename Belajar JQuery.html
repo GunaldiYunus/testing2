@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="jquery-3.2.1.min.js"></script>
+</head>
+<style media="screen">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	.first{
+		width: 100%;
+		height: 100vh;
+		background-color: #3399ff;
+		transition: .5s cubic-bezier(.27,.85,.66,.38);
+		text-align: center;
+		color: #fff;
+	}
+	.first h1{
+		font-size: 3.5em;
+	}
+	.eq-1,.eq-2{
+		margin-top: 300px;
+	}
+	.eq-2{
+		display: none;
+	}
+	.p{
+		padding: 5px 10px;
+		border-radius: 15px;
+	}
+	button{
+		box-shadow: none;
+		outline: none;
+	}
+	.m-0{
+		margin: 0;
+	}
+	.second{
+		width: 100%;
+		height: 100vh;
+		background-color: #2288aa;
+		transition: .5s cubic-bezier(.27,.85,.66,.38);
+		text-align: center;
+		color: #fff;
+	}
+</style>
+<body>
+	<div class="first">
+		<button type="button" name="button" class="eq-1 p">Start</button>
+		<button type="button" name="button" class="eq-2 p">End</button><br><br>
+		<h1 class="eq-1 m-0">I will disappear</h1>
+		<h1 class="eq-2 m-0">From this world</h1>
+	</div>
+	<div class="second">
+		
+	</div>
+		<script>
+
+			$('.eq-1').click(function(){
+				$(this).hide()
+				$('h1').hide()
+				$('.eq-2').show()
+				$('.first').css({
+					'color':'#f9f9f9',
+					'background':'#111'
+				});
+			});
+
+			$('.eq-2').click(function(){
+				$(this).hide()
+				$('.eq-1').show()
+				$('h1').hide()
+				$('h1:first').show()
+				$('.first').css('background','#3399ff')
+			});
+
+	</script>
+</body>
+</html>
